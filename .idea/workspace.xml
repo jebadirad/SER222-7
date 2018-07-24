@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="865cb991-b4b5-4ff9-854b-62d88a162307" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ser222_unit7_hw02_base.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/ser222_unit7_hw02_baseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ser222_unit7_hw02_base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ser222_unit7_hw02_base.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +17,8 @@
       <file leaf-file-name="ser222_unit7_hw02_base.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ser222_unit7_hw02_base.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="203" column="34" lean-forward="true" selection-start-line="203" selection-start-column="34" selection-end-line="203" selection-end-column="34" />
+            <state relative-caret-position="234">
+              <caret line="202" column="44" lean-forward="true" selection-start-line="202" selection-start-column="44" selection-end-line="202" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -241,7 +239,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.5557895" />
+      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.50421053" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
@@ -364,8 +362,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ser222_unit7_hw02_base.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="203" column="34" lean-forward="true" selection-start-line="203" selection-start-column="34" selection-end-line="203" selection-end-column="34" />
+        <state relative-caret-position="234">
+          <caret line="202" column="44" lean-forward="true" selection-start-line="202" selection-start-column="44" selection-end-line="202" selection-end-column="44" />
         </state>
       </provider>
     </entry>

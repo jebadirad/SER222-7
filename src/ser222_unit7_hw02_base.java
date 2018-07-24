@@ -171,39 +171,7 @@ public class ser222_unit7_hw02_base
             /*while(downOpen == randomRow || downOpen == endY){
                 downOpen = randBetween(randomRow + 1, endY - 1);
             }*/
-            int wallNotOpen = randBetween(1,4);
-            switch(wallNotOpen){
-                case 1:
-                     //left closed
-                    level[randomRow][rightOpen] = ' ';
-                    level[upOpen][randomCol] = ' ';
-                    level[downOpen][randomCol] = ' ';
-                    break;
-                case 2:
-                    //right closed
-                    level[randomRow][leftOpen] = ' ';
-                    level[upOpen][randomCol] = ' ';
-                    level[downOpen][randomCol] = ' ';
-                    break;
-                case 3 :
-                    level[randomRow][leftOpen] = ' ';
-                    level[randomRow][rightOpen] = ' ';
-                    level[downOpen][randomCol] = ' ';
-                    //up closed
-                    break;
-                case 4 :
-                    level[randomRow][leftOpen] = ' ';
-                    level[randomRow][rightOpen] = ' ';
-                    level[upOpen][randomCol] = ' ';
-                    //down closed
-                    break;
-                default:
-                    level[randomRow][leftOpen] = ' ';
-                    level[randomRow][rightOpen] = ' ';
-                    level[upOpen][randomCol] = ' ';
-                    //down closed.
-                    break;
-            }
+
 
             //top left
             makeMazeRecursive(level, startX, startY, randomCol , randomRow );
@@ -213,6 +181,84 @@ public class ser222_unit7_hw02_base
             makeMazeRecursive(level, startX, randomRow,randomCol,endY);
             //top right
             makeMazeRecursive(level, randomCol, startY, endX, randomRow);
+            
+            int wallNotOpen = randBetween(1,4);
+            switch(wallNotOpen){
+                case 1:
+                    //left closed
+                    level[randomRow][rightOpen] = ' ';
+                    level[randomRow-1][rightOpen ] = ' ';
+                    level[randomRow+1][rightOpen ] = ' ';
+                    //make sure there is opening above and below it?
+                    level[upOpen][randomCol] = ' ';
+                    level[upOpen][randomCol-1] = ' ';
+                    level[upOpen][randomCol +1] = ' ';
+
+                    level[downOpen][randomCol] = ' ';
+                    level[downOpen][randomCol -1] = ' ';
+                    level[downOpen][randomCol +1] = ' ';
+
+                    break;
+                case 2:
+                    //right closed
+                    level[randomRow][leftOpen] = ' ';
+                    level[randomRow-1][leftOpen ] = ' ';
+                    level[randomRow+1][leftOpen ] = ' ';
+                    //make sure there is opening above and below it?
+                    level[upOpen][randomCol] = ' ';
+                    level[upOpen][randomCol-1] = ' ';
+                    level[upOpen][randomCol +1] = ' ';
+
+                    level[downOpen][randomCol] = ' ';
+                    level[downOpen][randomCol -1] = ' ';
+                    level[downOpen][randomCol +1] = ' ';
+                    break;
+                case 3 :
+
+
+                    level[randomRow][rightOpen] = ' ';
+                    level[randomRow-1][rightOpen ] = ' ';
+                    level[randomRow+1][rightOpen ] = ' ';
+
+                    level[randomRow][leftOpen] = ' ';
+                    level[randomRow][leftOpen -1] = ' ';
+                    level[randomRow][leftOpen +1] = ' ';
+                    //make sure there is opening above and below it?
+
+                    level[downOpen][randomCol] = ' ';
+                    level[downOpen][randomCol -1] = ' ';
+                    level[downOpen][randomCol +1] = ' ';
+
+                    //up closed
+                    break;
+                case 4 :
+                    level[randomRow][rightOpen] = ' ';
+                    level[randomRow-1][rightOpen ] = ' ';
+                    level[randomRow+1][rightOpen ] = ' ';
+
+                    level[randomRow][leftOpen] = ' ';
+                    level[randomRow][leftOpen -1] = ' ';
+                    level[randomRow][leftOpen +1] = ' ';
+                    //make sure there is opening above and below it?
+                    level[upOpen][randomCol] = ' ';
+                    level[upOpen][randomCol-1] = ' ';
+                    level[upOpen][randomCol +1] = ' ';
+                    //down closed
+                    break;
+                default:
+                    level[randomRow][rightOpen] = ' ';
+                    level[randomRow-1][rightOpen ] = ' ';
+                    level[randomRow+1][rightOpen ] = ' ';
+                    level[randomRow][leftOpen] = ' ';
+                    level[randomRow][leftOpen -1] = ' ';
+                    level[randomRow][leftOpen +1] = ' ';
+                    //make sure there is opening above and below it?
+                    level[upOpen][randomCol] = ' ';
+                    level[upOpen][randomCol-1] = ' ';
+                    level[upOpen][randomCol +1] = ' ';
+                    //down closed.
+                    break;
+            }
         }
     }
 
