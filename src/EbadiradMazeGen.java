@@ -6,11 +6,11 @@
  */
 import java.util.Random;
 
-public class ser222_unit7_hw02_base
+public class EbadiradMazeGen
 {
     //standard console size in characters.
-    private static final int LEVEL_HEIGHT = 25;
-    private static final int LEVEL_WIDTH = 80;       
+    private static final int LEVEL_HEIGHT = 50;
+    private static final int LEVEL_WIDTH = 200;
     
     private static final char ICON_WALL = '#';           
     private static final char ICON_BLANK = ' ';
@@ -129,6 +129,7 @@ public class ser222_unit7_hw02_base
             while(randomRow - startY <= 1 || endY - randomRow <= 1){
                 if(randomRow - startY <= 1 && endY - randomRow <= 1){
                     randomRow = endY;
+                    break;
                 }else{
                     randomRow = randBetween(startY,endY);
 
@@ -154,23 +155,15 @@ public class ser222_unit7_hw02_base
                 }
             }
             int leftOpen = randBetween(startX + 1, randomCol - 1);
-            /*while(leftOpen == randomCol || leftOpen == startX){
-                leftOpen = randBetween(startX + 1, randomCol - 1);
-            }*/
+
 
             int rightOpen = randBetween(randomCol + 1, endX - 1);
-            /*while(rightOpen == randomCol || rightOpen == endX){
-                rightOpen = randBetween(randomCol + 1, endX - 1);
-            }*/
+
             int upOpen = randBetween(startY + 1, randomRow - 1);
-            /*while(upOpen == startY || upOpen == randomRow){
-                upOpen = randBetween(startY + 1 , randomRow - 1);
-            }*/
+
 
             int downOpen = randBetween(randomRow + 1 , endY - 1);
-            /*while(downOpen == randomRow || downOpen == endY){
-                downOpen = randBetween(randomRow + 1, endY - 1);
-            }*/
+
 
 
             //top left
@@ -181,8 +174,10 @@ public class ser222_unit7_hw02_base
             makeMazeRecursive(level, startX, randomRow,randomCol,endY);
             //top right
             makeMazeRecursive(level, randomCol, startY, endX, randomRow);
-            
+
             int wallNotOpen = randBetween(1,4);
+            //open up the sides next to all the walls, why have an opening if you
+            // cannot walk through?
             switch(wallNotOpen){
                 case 1:
                     //left closed
@@ -214,8 +209,6 @@ public class ser222_unit7_hw02_base
                     level[downOpen][randomCol +1] = ' ';
                     break;
                 case 3 :
-
-
                     level[randomRow][rightOpen] = ' ';
                     level[randomRow-1][rightOpen ] = ' ';
                     level[randomRow+1][rightOpen ] = ' ';
@@ -265,10 +258,10 @@ public class ser222_unit7_hw02_base
     /**
      * area must be greater than 3x3, and ensure that not 1 side has a width of less
      * than 1.
-     * @param lx
-     * @param ux
-     * @param ly
-     * @param uy
+     * @param lx the lower x bound
+     * @param ux the upper x bound
+     * @param ly the lower y bound
+     * @param uy the upper y bound.
      * @return
      */
     public static boolean validSubArea(int lx, int ux, int ly, int uy){
@@ -303,7 +296,7 @@ public class ser222_unit7_hw02_base
             int bound = (upperBound) - (lowerBound);
 
             int randomNum = rand.nextInt(bound + 1) + (lowerBound);
-            
+
         return randomNum;
     }
     
